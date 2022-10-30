@@ -7,6 +7,9 @@ I've commented a lot of lines of codes to the best of my knowledge, if you feel 
 
 I'll be updating and using this repo for testing and deploying my solidity code .. which I'm currently learning
 
+### Learning Solidity
+- In the brance Introduction-to-Solidity, we'll go through the basics and understand the flow of solidity
+
 * npx hardhat test
 * npx hardhat compile
 * npx hardhat run scripts/deploy.js  // for test network
