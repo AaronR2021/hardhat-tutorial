@@ -98,3 +98,5 @@ contract XYZ {
             someFuncWithManyInputs({a: address(0), b: true, c: "c", x: 1, y: 2, z: 3});
     }
 }
+
+// (uint a, bool b, uint j) = returnMany()
