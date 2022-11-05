@@ -14,7 +14,9 @@ I'll be updating and using this repo for testing and deploying my solidity code 
 * npx hardhat run scripts/deploy.js --network <network-name>
   
 ## Learning Solidity
-- In the brance Introduction-to-Solidity, we'll go through the basics and understand the flow of solidity
+- In the brance *Introduction-to-Solidity*, we'll go through the basics and understand the flow of solidity.
+
+- In the brance *basic-Applications*, we'll create basic appliations and run test cases.
 
 ## Sidenote
 - dont worry about the artifacts and cache folder, they are created on compiling your solidity code.
