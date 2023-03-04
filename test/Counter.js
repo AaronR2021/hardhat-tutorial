@@ -11,7 +11,7 @@ describe("Counter contract", function () {
         //* ethers is a global scope object, so you dont have to worry about importing it.
         const [owner] = await ethers.getSigners();
         //* getContractFactory returns an abstraction that we use to deploy the contract.
-        const CounterContract = await ethers.getContractFactory("Counter");
+        const CounterContract = await ethers.getContractFactory("CounterApp");
         //* .deploy() deploys the contract,
         //* and returns a object that has all the methods you possess in your smart contract
         const CounterContractDeployed = await CounterContract.deploy();
@@ -26,7 +26,7 @@ describe("Counter contract", function () {
         //* ethers is a global scope object, so you dont have to worry about importing it.
         const [owner] = await ethers.getSigners();
         //* getContractFactory returns an abstraction that we use to deploy the contract.
-        const CounterContract = await ethers.getContractFactory("Counter");
+        const CounterContract = await ethers.getContractFactory("CounterApp");
         //* .deploy() deploys the contract,
         //* and returns a object that has all the methods you possess in your smart contract
         const CounterContractDeployed = await CounterContract.deploy();
@@ -41,7 +41,7 @@ describe("Counter contract", function () {
         //* ethers is a global scope object, so you dont have to worry about importing it.
         const [owner] = await ethers.getSigners();
         //* getContractFactory returns an abstraction that we use to deploy the contract.
-        const CounterContract = await ethers.getContractFactory("Counter");
+        const CounterContract = await ethers.getContractFactory("CounterApp");
         //* .deploy() deploys the contract,
         //* and returns a object that has all the methods you possess in your smart contract
         const CounterContractDeployed = await CounterContract.deploy();

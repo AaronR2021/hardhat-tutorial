@@ -1,10 +1,10 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "D:\\hardhat-tutorial\\contracts\\Counter.sol": {
-      "lastModificationDate": 1667108241914,
-      "contentHash": "a6818f1804fa2b9fd421651765e7771c",
-      "sourceName": "contracts/Counter.sol",
+    "D:\\hardhat-tutorial\\contracts\\01HelloWorld.sol": {
+      "lastModificationDate": 1677920776101,
+      "contentHash": "f0c0abcc0d934df47b5590060786c508",
+      "sourceName": "contracts/01HelloWorld.sol",
       "solcConfig": {
         "version": "0.8.17",
         "settings": {
@@ -30,45 +30,220 @@
       },
       "imports": [],
       "versionPragmas": [
-        "^0.8.13"
-      ],
-      "artifacts": [
-        "Counter"
-      ]
-    },
-    "D:\\hardhat-tutorial\\contracts\\Hello-World.sol": {
-      "lastModificationDate": 1667105457133,
-      "contentHash": "a6ab9963fcea628b40aa72e4598c9379",
-      "sourceName": "contracts/Hello-World.sol",
-      "solcConfig": {
-        "version": "0.8.17",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.13"
+        "^0.8.17"
       ],
       "artifacts": [
         "HelloWorld"
+      ]
+    },
+    "D:\\hardhat-tutorial\\contracts\\02Counter.sol": {
+      "lastModificationDate": 1677921448807,
+      "contentHash": "7d02e78be5093a6ba129e3f309ad509b",
+      "sourceName": "contracts/02Counter.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "CounterApp"
+      ]
+    },
+    "D:\\hardhat-tutorial\\contracts\\03Primitives.sol": {
+      "lastModificationDate": 1677922449247,
+      "contentHash": "0d488a5232e12a7edb1fd564f4b030af",
+      "sourceName": "contracts/03Primitives.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "Primitives"
+      ]
+    },
+    "D:\\hardhat-tutorial\\contracts\\04Variables.sol": {
+      "lastModificationDate": 1677923219089,
+      "contentHash": "78110a90127104e4679f4fd51e682bc5",
+      "sourceName": "contracts/04Variables.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "Variables"
+      ]
+    },
+    "D:\\hardhat-tutorial\\contracts\\05Constants.sol": {
+      "lastModificationDate": 1677923369153,
+      "contentHash": "0120ec0e62cd92a64a35dd350ea17537",
+      "sourceName": "contracts/05Constants.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "Constants"
+      ]
+    },
+    "D:\\hardhat-tutorial\\contracts\\06Immutable.sol": {
+      "lastModificationDate": 1677931829383,
+      "contentHash": "21782848f55a5851e80afbfdc8c563b2",
+      "sourceName": "contracts/06Immutable.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "Immutable"
+      ]
+    },
+    "D:\\hardhat-tutorial\\contracts\\07SimpleStorage.sol": {
+      "lastModificationDate": 1677932578806,
+      "contentHash": "940d7d5763f17a3fdb9cfcd240fd8cb9",
+      "sourceName": "contracts/07SimpleStorage.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "SimpleStorage"
       ]
     }
   }

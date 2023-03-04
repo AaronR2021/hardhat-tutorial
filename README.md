@@ -9,7 +9,7 @@ I'll be updating and using this repo for testing and deploying my solidity code 
 
 ## Common cmds you'll be using working with this Repo
 * npx hardhat test test/testFileName.js
-* npx hardhat compile
+* npx hardhat compile - compiles all the .sol files in contract folder
 * npx hardhat run scripts/deploy.js  // for test network
 * npx hardhat run scripts/deploy.js --network <network-name>
   
