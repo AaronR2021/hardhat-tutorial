@@ -245,6 +245,111 @@
       "artifacts": [
         "SimpleStorage"
       ]
+    },
+    "D:\\hardhat-tutorial\\contracts\\10IfElse.sol": {
+      "lastModificationDate": 1677993299881,
+      "contentHash": "7872ece78ee99693e7b9fc9992c05045",
+      "sourceName": "contracts/10IfElse.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "IfElse"
+      ]
+    },
+    "D:\\hardhat-tutorial\\contracts\\11forWhile.sol": {
+      "lastModificationDate": 1677995037859,
+      "contentHash": "a236080f10b88d2964558124c41a4fe1",
+      "sourceName": "contracts/11forWhile.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "Loop"
+      ]
+    },
+    "D:\\hardhat-tutorial\\contracts\\12Mapping.sol": {
+      "lastModificationDate": 1677995615607,
+      "contentHash": "dba090322f1c177abec625aed685aead",
+      "sourceName": "contracts/12Mapping.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "Mapping"
+      ]
     }
   }
 }
