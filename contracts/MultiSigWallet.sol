@@ -37,8 +37,6 @@ contract MultiSigWallet {
        //number of conformations required 
        numConfirmationRequired = _numConfirmationsRequired;
 
-
-
     }
 
     //* ___________________________________
