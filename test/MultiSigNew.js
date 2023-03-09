@@ -2,20 +2,14 @@ const { expect } = require("chai");
 const { loadFixture } = require("@nomicfoundation/hardhat-network-helpers");
 const { ethers } = require("hardhat");
 
-//* by default contractFactory() and deploy() are connected to the first signer, i.e "owner"
-//* This means the owner account deploys the contract in this test case on the hardhat network.
-
     //! fixtures help reduce code duplication
     async function deployTokenFixture() {
-        //create a object from the contract EthSend.
-        //The parameter should be the contract name, and not the file name
-        const EthSend = await ethers.getContractFactory("MultiSigNew");
 
-        //get owner(who uploaded the contract), address of random user1, address of random user2
         const [owner, addr1, addr2] = await ethers.getSigners();
 
-        //deploy the contract by pointing to that object.
-        const contractObject = await EthSend.deploy();
+        const EthSend = await ethers.getContractFactory("MultiSigNew");
+
+        const contractObject = await EthSend.connect(owner).deploy([owner.address,addr1.address,addr2.address],2);
     
         //wait till it gets mined
         await contractObject.deployed();
@@ -25,66 +19,78 @@ const { ethers } = require("hardhat");
       }
 
 
-      describe("Ether Wallet", function () {
+      describe("MultiSig Wallet", function () {
 
-        it("initial funds present in the contract", async function () {
-            const { hardhatToken, owner } = await loadFixture(deployTokenFixture);
-
-            //*Initial funds in the contract
-           const contractBalance = await hardhatToken.getBalance();
-           expect(contractBalance).to.equal(0);
-
-         });
-
-         it("owner value not address(0)", async function () {
-            const { hardhatToken, owner,addr1 } = await loadFixture(deployTokenFixture);
+        it("connection-check", async function () {
+            const { contractObject } = await loadFixture(deployTokenFixture);
 
             //*Initial funds in the contract
-           const ownerAddress = await hardhatToken.owner();
-           expect(ownerAddress).to.not.equal(0x0000000000000000000000000000000000000000);
+           const value = await contractObject.getInfo();
+           expect(value).to.equal(2);
 
          });
 
-         it("check if you recieve ether in this contract", async function () {
-            const { hardhatToken, addr1} = await loadFixture(deployTokenFixture);
+         it("submit transaction", async function(){
+            const {contractObject, owner, addr1, addr2} = await loadFixture(deployTokenFixture);
 
-            //address of contract
-            const addressOfContract = await hardhatToken.getAddressContract();
+            await contractObject.submitTrx(addr2.address,1);
 
-            //send money to address of contract
-            const params = { to: addressOfContract, value: ethers.utils.parseUnits("2.472", "ether").toHexString()};
-            const txHash = await addr1.sendTransaction(params);
+         })
+         it("approve transaction", async function(){
+            const {contractObject, owner, addr1, addr2} = await loadFixture(deployTokenFixture);
 
-           //balance the contract holds
-           const contractBalance = await hardhatToken.getBalance();
-           expect(contractBalance).to.not.equal(0);
+            //*send some money to a contract
+            const tx = await owner.sendTransaction({
+                to: contractObject.address,
+                value: ethers.utils.parseEther("5"),
+              });
+          
+              // Wait for the transaction to be mined
+              await tx.wait();
+          
+              // Check that the contract balance has increased by 1 ether
+              const balance = await ethers.provider.getBalance(contractObject.address);
+              expect(balance).to.equal(ethers.utils.parseEther("5"));//sending 5 ether            
+            await contractObject.submitTrx(addr2.address,2000000000000000000n);
 
+            const addr1Trx = contractObject.connect(addr1)
+            const addr2Trx = contractObject.connect(addr2)
 
+            await addr1Trx.approveTrx(0);
+            await addr2Trx.approveTrx(0);
 
+            await contractObject.executeTrx(0)
+            const balanceNew = await ethers.provider.getBalance(contractObject.address);
+            expect(balanceNew).to.equal(3000000000000000000n)
+            
 
-         });
-         
-         it("check if owner can withdraw ether from this contract by checking the balance of the contract", async function () {
-            const { hardhatToken, owner, addr1} = await loadFixture(deployTokenFixture);
+         })
 
-            //address of contract
-            const addressOfContract = await hardhatToken.getAddressContract();
+         it("reject transaction", async function(){
+            const {contractObject, owner, addr1, addr2} = await loadFixture(deployTokenFixture);
 
-            //send money to address of contract
-            const params = { to: addressOfContract, value: ethers.utils.parseUnits("2.472", "ether").toHexString()};
-            const txHash = await addr1.sendTransaction(params);
+            //*send some money to a contract
+            const tx = await owner.sendTransaction({
+                to: contractObject.address,
+                value: ethers.utils.parseEther("5"),
+              });
+          
+              // Wait for the transaction to be mined
+              await tx.wait();
+          
+              // Check that the contract balance has increased by 1 ether
+              const balance = await ethers.provider.getBalance(contractObject.address);
+              expect(balance).to.equal(ethers.utils.parseEther("5"));//sending 5 ether            
+              await contractObject.submitTrx(addr2.address,2000000000000000000n);
 
-//            console.log(ethers.BigNumber.from("2472000000000000000"),"convert string to bignumber")
-//            console.log(await hardhatToken.getBalance(),' is the balance')
-//            console.log(ethers.BigNumber.from("2472000000000000000")<=await hardhatToken.getBalance())
+            const addr1Trx = contractObject.connect(addr1)
+            const addr2Trx = contractObject.connect(addr2)
 
-           //owner withdraws funds
-           await hardhatToken.withdraw(ethers.BigNumber.from("1472000000000000000"));
+            await addr1Trx.rejectTrx(0);
+            await addr2Trx.rejectTrx(0);
 
-           //balance of contract
-           expect(await hardhatToken.getBalance()).to.equal(ethers.BigNumber.from("1000000000000000000"))
-
-         });
+            await expect(contractObject.executeTrx(0)).to.be.revertedWith("failed to meet criteria");
+         })
        
        
        });

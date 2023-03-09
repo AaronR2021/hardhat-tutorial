@@ -13,6 +13,7 @@ pragma solidity ^0.8.17;
 */
 
 contract MultiSigNew {
+    event Log(string message, uint256 value);
 
     receive() external payable {}
     //list of owners
@@ -45,7 +46,6 @@ contract MultiSigNew {
     //*define a transaction -> when defining a struct(";")
     struct Transaction {
         address to;
-        bytes data;
         uint noOfApprovals;
         bool isApproved;
         uint amount;
@@ -59,8 +59,7 @@ contract MultiSigNew {
 
 
 
-    function submitTrx(address _to,bytes memory dataValue,uint _amount) public{
-
+    function submitTrx(address payable _to,uint _amount) public{
         //*Check if owner
         require(isOwner[msg.sender]==true);
 
@@ -69,14 +68,13 @@ contract MultiSigNew {
             Transaction({
             to:_to,
             amount:_amount,
-            data:dataValue,
             noOfApprovals:1,
             isApproved:false
         })
         );
 
         transactionApprovalList[transactions.length-1][msg.sender]=true;
-        
+                 
     }
 
     //!approve transaction
@@ -100,9 +98,9 @@ contract MultiSigNew {
         //check is already approved
         require(transactionApprovalList[_transactionId][msg.sender]==false,"already approved/rejected");
 
-
         Transaction storage transaction = transactions[_transactionId];
-        transaction.noOfApprovals-=1;
+        transaction.noOfApprovals>0?transaction.noOfApprovals-=1:transaction.noOfApprovals=0;
+
 
         transactionApprovalList[_transactionId][msg.sender]=true;
 
@@ -113,12 +111,22 @@ contract MultiSigNew {
         Transaction storage transaction = transactions[_trxId];
 
         require(transaction.noOfApprovals>=numberOfCheckers,"failed to meet criteria");
+        require(transaction.noOfApprovals>=numberOfCheckers);
 
-        (bool success,)=transaction.to.call{value:transaction.amount}(transaction.data);
+
+        (bool success,)=transaction.to.call{value:transaction.amount}("");
         assert(success);
         transaction.isApproved=true;
+        emit Log("sucessfully executed:", 21);
+
     }
     
+    function getInfo() public view returns(uint) {
+           return numberOfCheckers;
+    }
+    function getTransactionCount() public view returns (uint) {
+           return transactions.length;
+    }
 
 
 

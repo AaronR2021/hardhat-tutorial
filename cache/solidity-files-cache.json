@@ -1,0 +1,110 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "D:\\hardhat-tutorial\\contracts\\EthSend.sol": {
+      "lastModificationDate": 1678338015022,
+      "contentHash": "1d33f6b951b7d27077e64cc6464bcafd",
+      "sourceName": "contracts/EthSend.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "EthWallet"
+      ]
+    },
+    "D:\\hardhat-tutorial\\contracts\\MultiSigWallet.sol": {
+      "lastModificationDate": 1678338015022,
+      "contentHash": "fae0fd2d64eef710e8d5467d147771b7",
+      "sourceName": "contracts/MultiSigWallet.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.13"
+      ],
+      "artifacts": [
+        "MultiSigWallet"
+      ]
+    },
+    "D:\\hardhat-tutorial\\contracts\\MultiSigWalletNew.sol": {
+      "lastModificationDate": 1678343240070,
+      "contentHash": "7f6e12d709822b9645f101eb1b102c0f",
+      "sourceName": "contracts/MultiSigWalletNew.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "MultiSigNew"
+      ]
+    }
+  }
+}
