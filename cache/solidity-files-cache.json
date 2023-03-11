@@ -105,6 +105,76 @@
       "artifacts": [
         "MultiSigNew"
       ]
+    },
+    "D:\\hardhat-tutorial\\contracts\\MerkelTreeCreate.sol": {
+      "lastModificationDate": 1678511751954,
+      "contentHash": "b109ede96cf41837cc7639d25abe05b7",
+      "sourceName": "contracts/MerkelTreeCreate.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "MerkelTreeCreate"
+      ]
+    },
+    "D:\\hardhat-tutorial\\contracts\\MerkelTreeProof.sol": {
+      "lastModificationDate": 1678510627809,
+      "contentHash": "859ad1b9807733be62a1bab3cc0279ae",
+      "sourceName": "contracts/MerkelTreeProof.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "MerkleProof"
+      ]
     }
   }
 }
